@@ -9,10 +9,12 @@ defmodule Blockclockex.Application do
   @impl true
   def start(_type, _args) do
     port = 8000
+
     children = [
       # Starts a worker by calling: Blockclockex.Worker.start_link(arg)
       # {Blockclockex.Worker, arg}
-      {Plug.Cowboy, scheme: :http, plug: Blockclockex.Router, options: [port: port]}
+      {Plug.Cowboy, scheme: :http, plug: Blockclockex.Router, options: [port: port]},
+      {Cachex, name: :blockclock_cache}
     ]
 
     Logger.info("Running on port #{port}")

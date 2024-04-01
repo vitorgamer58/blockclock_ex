@@ -23,7 +23,8 @@ defmodule Blockclockex.MixProject do
   defp deps do
     [
       {:plug_cowboy, "~> 2.5.2"},
-      {:httpoison, "~> 2.2"}
+      {:httpoison, "~> 2.2"},
+      {:cachex, "~> 3.6"}
     ]
   end
 end

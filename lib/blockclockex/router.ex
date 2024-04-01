@@ -1,5 +1,5 @@
 defmodule Blockclockex.Router do
-  alias Blockclockex.Controllers.Blockheight
+  alias Blockclockex.Infra.Controllers.Blockheight
   use Plug.Router
 
   plug(:match)

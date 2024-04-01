@@ -1,10 +1,8 @@
-defmodule Blockclockex.Clients.Mempool do
+defmodule Blockclockex.Infra.Clients.Mempool do
   require Logger
 
-  def getBlockHeight() do
-    case HTTPoison.get("https://mempool.space/api/blocks/tip/height", [],
-           ssl: [verify: :verify_none]
-         ) do
+  def get_block_height() do
+    case HTTPoison.get("https://mempool.space/api/blocks/tip/height", []) do
       {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
         {:ok, body}
 
