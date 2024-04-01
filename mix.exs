@@ -23,7 +23,7 @@ defmodule Blockclockex.MixProject do
   defp deps do
     [
       {:plug_cowboy, "~> 2.5.2"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
+      {:httpoison, "~> 2.2"}
     ]
   end
 end
