@@ -13,7 +13,7 @@ defmodule Blockclockex.Application do
     children = [
       # Starts a worker by calling: Blockclockex.Worker.start_link(arg)
       # {Blockclockex.Worker, arg}
-      {Plug.Cowboy, scheme: :http, plug: Blockclockex.Router, options: [port: port]},
+      {Bandit, scheme: :http, plug: Blockclockex.Router, port: port},
       {Cachex, name: :blockclock_cache}
     ]
 
